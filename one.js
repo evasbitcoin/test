@@ -1,7 +1,6 @@
 //引入bitcoin模組
 const bitcoin = require("bitcoinjs-lib");
 
-
 //選用regtest網路
 const regtest = bitcoin.networks.testnet
 
@@ -18,7 +17,6 @@ const keyPair = bitcoin.ECPair.fromWIF(privateKey,regtest);
 const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey });
 console.log(bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey }));
 const txb = new bitcoin.TransactionBuilder(regtest);
-
 
 //用listunspent 取出最後一筆資料的txid
 txb.addInput('c3acac43c6f0e83538fb5c82ed01379349f5dccf43a8af7bb5d8f0c60fb1fcfc', 0);
